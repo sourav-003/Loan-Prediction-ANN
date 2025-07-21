@@ -96,9 +96,27 @@ x = Dropout(0.2)(x)
 output_layer = Dense(1, activation='sigmoid')(x)
 
 model = Model(inputs=input_layer, outputs=output_layer)
+```
+
+## 🧠 Sequential API Model
+
+A simplified but powerful deep learning model using TensorFlow's Sequential API.
+
+```python
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+
+model = Sequential([
+    Dense(128, activation='relu', input_shape=(input_dim,)),
+    Dropout(0.3),
+    Dense(64, activation='relu'),
+    Dropout(0.2),
+    Dense(1, activation='sigmoid')
+])
+```
+---
 
 ## 📊 Evaluation Metrics
-
 Used comprehensive metrics to evaluate performance:
 
 - ✅ **Accuracy**
@@ -150,13 +168,18 @@ Visual analysis includes:
 # Clone the repository
 git clone https://github.com/yourusername/loan-prediction-dl.git
 cd loan-prediction-dl
+```
 
 # (Recommended) Create virtual environment
 conda create -n loanenv python=3.9
 conda activate loanenv
 
+---
+
 # Install requirements
 pip install -r requirements.txt
+
+---
 
 ## 📂 Folder Structure
 
@@ -171,6 +194,9 @@ loan-prediction-dl/
 ├── README.md
 └── saved_model/
     └── model.h5 (optional)
+```
+---
+
 ## 🔒 License
 
 This project is licensed under the **MIT License**.  
